@@ -35,15 +35,11 @@ difference() {
     cube([ widthKnobHole, depthKnobHole, edges ]);
   }
 
-// Hole for wire
-#translate([ width / 2, 0, height - radiusWireHole - edges ]) {
-  cube([ radiusWireHole * 2, edges, radiusWireHole + edges ]);
-}
-//   rotate([ 90, 0, 0 ]) {
-//     translate([ width / 2, height - 0.6, -edges ]) {
-//       scale([ 1, 0.6, 1 ]) { cylinder(h = edges, r = radiusWireHole); }
-//     }
-//   }
+  // Hole for wire
+  translate(
+      [ width / 2 - radiusWireHole, 0, height - radiusWireHole - edges ]) {
+    cube([ radiusWireHole * 2, edges, radiusWireHole + edges ]);
+  }
 }
 
 // Edges to fit potentiometer
