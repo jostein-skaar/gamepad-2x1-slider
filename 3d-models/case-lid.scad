@@ -3,18 +3,17 @@ include<BOSL2\std.scad>;
 $fa = 6;
 $fs = 0.5;
 
+sizeScrewCube = 6;
+
 edges = 1.8;
-width = 100 - edges * 2;
-depth = 30 - edges * 2;
+width = 40 + 1;
+depth = 60 + sizeScrewCube * 2 + 1;
 height = edges;
 
 margin = 0.2;
 
-sizeScrewCube = 6;
-radiusScrew = 1.5;
-radiusScreHead = 2;
-
-heightSupport = 4.6;
+radiusScrew = 1.2;
+radiusScreHead = 1.8;
 
 // Whole chasis
 difference() {
@@ -41,12 +40,4 @@ difference() {
       cylinder(h = edges, r1 = radiusScreHead, r2 = radiusScrew);
     }
   }
-}
-
-translate([ width / 2 - 4 / 2 + 15, depth / 2 - 4 / 2, edges ]) {
-  cube([ 4, 4, heightSupport ]);
-}
-
-translate([ width / 2 - 4 / 2 - 15, depth / 2 - 4 / 2, edges ]) {
-  cube([ 4, 4, heightSupport ]);
 }
